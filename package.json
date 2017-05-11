@@ -16,7 +16,6 @@
     "prop-types": "^15.5.9"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.16.0",
     "babel-eslint": "^6.1.2",
@@ -63,7 +62,8 @@
     "publish:site": "npm run build && npm publish && git push && git push --tags",
     "publish:demo": "npm run build:ghpages && gh-pages -d dist/examples",
     "start": "node server.js",
-    "test": "mocha \"src/**/*.test.js\" --compilers js:babel-register"
+    "test": "mocha \"src/**/*.test.js\" --compilers js:babel-register",
+    "postinstall": "npm run build"
   },
   "keywords": [
     "react",
